@@ -75,7 +75,8 @@ public class PrototypeDesignPattern {
         // Print both employees to see the effect of cloning
         System.out.println("Original Employee:");
         original.print();
-        System.out.println("Cloned Employee:");
+        
+        System.out.println("Modified Cloned Employee:");
         clonedEmployee.print();
     }
 }
