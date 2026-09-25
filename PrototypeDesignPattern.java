@@ -1,6 +1,6 @@
 
-interface Prototype {
-    Prototype clone();
+interface Prototype<T> {
+    T clonePrototype();
 }
 
 class Address {
@@ -23,7 +23,7 @@ class Address {
     }
 }
 
-class Employee implements Prototype {
+class Employee implements Prototype<Employee> {
     private String name;
     private int age;
     private Address address;
@@ -41,12 +41,12 @@ class Employee implements Prototype {
     }
 
     @Override
-    public Prototype clone() {
+    public Employee clonePrototype() {
         return new Employee(this);
     }
 
-    void print() {
-        System.out.println("Name='" + name + "', Age=" + age + ", Address=" + address .getCity());
+    public void print() {
+        System.out.println("Name='" + name + "', Age=" + age + ", Address=" + address.getCity());
     }
 
     public void updateCity(String city) {
@@ -63,7 +63,7 @@ public class PrototypeDesignPattern {
         Employee original = new Employee("John Doe", 30, "New York");
 
         // Clone the original employee
-        Employee clonedEmployee = (Employee) original.clone();
+        Employee clonedEmployee = original.clonePrototype();
 
         System.out.println("Before modifying the cloned employee's address:");
         original.print();
