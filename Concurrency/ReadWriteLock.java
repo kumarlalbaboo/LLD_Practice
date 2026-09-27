@@ -71,9 +71,11 @@ class Cache {
 
 public class ReadWriteLock {
     public static void main(String[] args) throws InterruptedException {
+
         Cache cache = new Cache();
 
         cache.put(1, 100);
         System.out.println("Value for key 1: " + cache.get(1));
+        
     }
 }
