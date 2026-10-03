@@ -1,3 +1,4 @@
+package CreationalDesignPatterns;
 
 // Double check singleton class
 class DoubleCheckSingleton{
