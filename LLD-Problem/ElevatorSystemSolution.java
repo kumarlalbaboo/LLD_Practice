@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 5. Each elevator should operate independently
  * 6. Display current elevator status
  * 7. Thread-safe
- * 8. Graceful shutdown
+ * 8. Graceful shutdown System
  *
  * Non-Functional Requirements:
  * 1. Extensible
