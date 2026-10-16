@@ -41,6 +41,11 @@ Non-Functional Requirements:
         UserPreferenceService
         NotificationDispatcherService
 
+     * Patterns:
+ * 1. Factory  - NotificationChannelFactory creates/resolves channels.
+ * 2. Observer - NotificationObserver receives per-channel status changes.
+ * 3. Decorator - Formatting, retry, and rate limiting wrap channel behavior.
+ * 4. Strategy - NotificationChannel implementations are interchangeable.
 */
 
 enum NotificationType {
