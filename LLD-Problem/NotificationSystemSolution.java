@@ -14,17 +14,34 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/*
- * Notification System LLD
- *
- * Patterns:
- * 1. Factory  - NotificationChannelFactory creates/resolves channels.
- * 2. Observer - NotificationObserver receives per-channel status changes.
- * 3. Decorator - Formatting, retry, and rate limiting wrap channel behavior.
- * 4. Strategy - NotificationChannel implementations are interchangeable.
- *
- * Java 8 compatible. Save as NotificationSystemSolution.java.
- */
+/* 
+ * Functional Requirements:
+----------------------------
+    1. Send Email/SMS/Push Notification to users based on their preferences. - Factory Design Pattern.
+    2. Async submission of notification to the notification handler/system. - Observer Design Pattern.
+    3. Rate Limiting/Formatting/Retry mechanism for failed notifications. - Decorator Design Pattern.
+    4. Easy to add new notification channels in the future. - Strategy Design Pattern.
+    5. Track the status of notifications (Sent, Failed, Pending).
+
+Non-Functional Requirements:
+----------------------------
+    1. Thread-safety
+    2. Async submission of notifications
+    3. Scalability/Extensibility
+    4. SOLID principles should be followed
+
+    Entities:
+    ----------------------------
+        Notification
+        NotificationService
+        NotificationChannel
+            SMSNotificationChannel
+            EmailNotificationChannel
+            PushNotificationChannel
+        UserPreferenceService
+        NotificationDispatcherService
+
+*/
 
 enum NotificationType {
     SMS, EMAIL, PUSH
